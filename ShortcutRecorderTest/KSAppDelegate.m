@@ -3,7 +3,7 @@
 //  ShortcutRecorderTest
 //
 //  Created by Keith Smiley on 6/26/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Keith Smiley. All rights reserved.
 //
 
 #import "KSAppDelegate.h"
