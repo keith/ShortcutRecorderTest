@@ -19,8 +19,8 @@
 		C2FB7207159A06B500AF0CA9 /* PTKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2FB7200159A06B500AF0CA9 /* PTKeyCodes.plist */; };
 		C2FB7208159A06B500AF0CA9 /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FB7202159A06B500AF0CA9 /* PTKeyCodeTranslator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C2FB7209159A06B500AF0CA9 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = C2FB7204159A06B500AF0CA9 /* PTKeyCombo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C2FB720B159A06BE00AF0CA9 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FB720A159A06BE00AF0CA9 /* ShortcutRecorder.framework */; };
-		C2FB720D159A06CE00AF0CA9 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C2FB720A159A06BE00AF0CA9 /* ShortcutRecorder.framework */; };
+		C2FB7210159A098500AF0CA9 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FB720F159A098500AF0CA9 /* ShortcutRecorder.framework */; };
+		C2FB7211159A099200AF0CA9 /* ShortcutRecorder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C2FB720F159A098500AF0CA9 /* ShortcutRecorder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C2FB720D159A06CE00AF0CA9 /* ShortcutRecorder.framework in CopyFiles */,
+				C2FB7211159A099200AF0CA9 /* ShortcutRecorder.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,7 @@
 		C2FB7202159A06B500AF0CA9 /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyCodeTranslator.m; sourceTree = "<group>"; };
 		C2FB7203159A06B500AF0CA9 /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyCombo.h; sourceTree = "<group>"; };
 		C2FB7204159A06B500AF0CA9 /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyCombo.m; sourceTree = "<group>"; };
-		C2FB720A159A06BE00AF0CA9 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = "<group>"; };
+		C2FB720F159A098500AF0CA9 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = ShortcutRecorderTest/ShortcutRecorder.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 			files = (
 				C2FB71FB159A069600AF0CA9 /* Carbon.framework in Frameworks */,
 				C2FB71DD159A067E00AF0CA9 /* Cocoa.framework in Frameworks */,
-				C2FB720B159A06BE00AF0CA9 /* ShortcutRecorder.framework in Frameworks */,
+				C2FB7210159A098500AF0CA9 /* ShortcutRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 		C2FB71DB159A067E00AF0CA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2FB720A159A06BE00AF0CA9 /* ShortcutRecorder.framework */,
+				C2FB720F159A098500AF0CA9 /* ShortcutRecorder.framework */,
 				C2FB71DC159A067E00AF0CA9 /* Cocoa.framework */,
 				C2FB71DE159A067E00AF0CA9 /* Other Frameworks */,
 			);
@@ -317,6 +317,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/ShortcutRecorderTest\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShortcutRecorderTest/ShortcutRecorderTest-Prefix.pch";
@@ -334,6 +335,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/ShortcutRecorderTest\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShortcutRecorderTest/ShortcutRecorderTest-Prefix.pch";
