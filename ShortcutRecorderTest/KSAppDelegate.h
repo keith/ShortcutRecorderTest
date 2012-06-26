@@ -11,6 +11,8 @@
 #import "PTHotKey.h"
 #import "PTHotKeyCenter.h"
 
+//@class PTHotKey; Not particularly necessary
+
 @interface KSAppDelegate : NSObject <NSApplicationDelegate> {
     IBOutlet SRRecorderControl *shortcutRecorder;
     IBOutlet SRRecorderControl *shortcutRecorderTwo;

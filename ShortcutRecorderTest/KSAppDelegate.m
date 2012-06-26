@@ -15,9 +15,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [KSAppDelegate universalAccessNeedsToBeTurnedOn];
     userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    [shortcutRecorder setCanCaptureGlobalHotKeys:YES];
-    [shortcutRecorderTwo setCanCaptureGlobalHotKeys:YES];
+
+//    [shortcutRecorder setCanCaptureGlobalHotKeys:YES]; // Defined in interface builder
+//    [shortcutRecorderTwo setCanCaptureGlobalHotKeys:YES];
 
     PTKeyCombo *keys = [[PTKeyCombo alloc] initWithPlistRepresentation:[userDefaults objectForKey:@"hi"]];
     KeyCombo someKeyCombo = SRMakeKeyCombo([keys keyCode], SRCarbonToCocoaFlags([keys modifiers]));
