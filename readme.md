@@ -1,6 +1,6 @@
 ## What's this?
 
-This is an implementation of [ShortcutRecorder](http://wafflesoftware.net/shortcut/) an awesome widely used framework for allowing user defined global hotkeys. This **does** work with Apple's sandbox with ARC enabled.
+This is an implementation of [ShortcutRecorder](http://wafflesoftware.net/shortcut/) an awesome widely used framework for allowing user defined global hotkeys. This **does** work with Apple's sandbox with ARC enabled. **Note:** This test application is Code signed. If you don't have a developer account uncheck the code signing box by clicking on the Summary options under your Target applications.
 
 ## Configuration
 
