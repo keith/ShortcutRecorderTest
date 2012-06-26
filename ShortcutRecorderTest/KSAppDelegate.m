@@ -12,33 +12,29 @@
 
 @synthesize window = _window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [KSAppDelegate universalAccessNeedsToBeTurnedOn];
     userDefaults = [NSUserDefaults standardUserDefaults];
     
     [shortcutRecorder setCanCaptureGlobalHotKeys:YES];
     [shortcutRecorderTwo setCanCaptureGlobalHotKeys:YES];
-    
-    id firstKey = [userDefaults objectForKey:@"hi"];
-    PTKeyCombo *keys = [[PTKeyCombo alloc] initWithPlistRepresentation:firstKey];
-    
+
+    PTKeyCombo *keys = [[PTKeyCombo alloc] initWithPlistRepresentation:[userDefaults objectForKey:@"hi"]];
     KeyCombo someKeyCombo = SRMakeKeyCombo([keys keyCode], SRCarbonToCocoaFlags([keys modifiers]));
     [shortcutRecorder setKeyCombo:someKeyCombo];
     
-    id secondKey = [userDefaults objectForKey:@"hello"];
-    keys = [[PTKeyCombo alloc] initWithPlistRepresentation:secondKey];
+    keys = [[PTKeyCombo alloc] initWithPlistRepresentation:[userDefaults objectForKey:@"hello"]];
     someKeyCombo = SRMakeKeyCombo([keys keyCode], SRCarbonToCocoaFlags([keys modifiers]));
     [shortcutRecorderTwo setKeyCombo:someKeyCombo];
 
 }
 
 - (void)sayHI {
-    NSLog(@"hiff");
+    NSLog(@"Shortcutrecordertwo");
 }
 
 - (void)sayBye {
-    NSLog(@"byee");
+    NSLog(@"Shortcutrecorder");
 }
 
 - (BOOL)shortcutRecorder:(SRRecorderControl *)aRecorder isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason {
@@ -51,7 +47,7 @@
     }
     if (kc.code == keyCode && kc.flags == flags) {
         isTaken = YES;
-        *aReason = @"it's already in use by SRTest";
+        *aReason = @"it's already in use by ShortcutRecorderTest";
         return isTaken;
     }
     
@@ -67,28 +63,23 @@
     akeyCombo = [[PTKeyCombo alloc] initWithKeyCode:code modifiers:flags];
     
     if (aRecorder == shortcutRecorder) {
-        id firstKey = [userDefaults objectForKey:@"hi"];
         [hotKeyCenter unregisterHotKey:otherHotKey]; // The Key to happiness
-        otherHotKey = nil;
         
-        otherHotKey = [[PTHotKey alloc] initWithIdentifier:firstKey keyCombo:akeyCombo];
+        otherHotKey = [[PTHotKey alloc] initWithIdentifier:[userDefaults objectForKey:@"hi"] keyCombo:akeyCombo];
         [userDefaults setObject:[akeyCombo plistRepresentation] forKey:@"hi"];
         [otherHotKey setTarget:self];
         [otherHotKey setAction:@selector(sayBye)];
         [hotKeyCenter registerHotKey:otherHotKey];
     } else if (aRecorder == shortcutRecorderTwo) {
-        id secondKey = [userDefaults objectForKey:@"hello"];
         [hotKeyCenter unregisterHotKey:hotKey];
-        hotKey = nil;
         
-        hotKey = [[PTHotKey alloc] initWithIdentifier:secondKey keyCombo:akeyCombo];
+        hotKey = [[PTHotKey alloc] initWithIdentifier:[userDefaults objectForKey:@"hello"] keyCombo:akeyCombo];
         [userDefaults setObject:[akeyCombo plistRepresentation] forKey:@"hello"];
         [hotKey setTarget:self];
         [hotKey setAction:@selector(sayHI)];
         [hotKeyCenter registerHotKey:hotKey];
     }
-    
-    
+
 //    if (newKeyCombo.code == ShortcutRecorderEmptyCode & newKeyCombo.flags == ShortcutRecorderEmptyFlags) {
 //    }
     
@@ -98,8 +89,8 @@
 
 + (BOOL)universalAccessNeedsToBeTurnedOn {
     if (!AXAPIEnabled()) {
-        NSString *message = NSLocalizedString(@"QuickCursor requires that you launch the Universal Access preferences pane and turn on \"Enable access for assistive devices\".", nil);
-        NSUInteger result = NSRunAlertPanel(message, @"", NSLocalizedString(@"OK", nil), NSLocalizedString(@"Quit QuickCursor", nil), NSLocalizedString(@"Cancel", nil));
+        NSString *message = NSLocalizedString(@"To use global hotkeys you must \"Enable access for assistive devices\" in the Universal Access preferences pane.", nil);
+        NSUInteger result = NSRunAlertPanel(message, @"", NSLocalizedString(@"OK", nil), NSLocalizedString(@"Quit", nil), NSLocalizedString(@"Cancel", nil));
         
         switch (result) {
             case NSAlertDefaultReturn:
