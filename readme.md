@@ -46,7 +46,8 @@ the first function gets called every time the key combination within a ShortcutR
 	    hotKeyCenter = [PTHotKeyCenter sharedCenter];
 	    
 	    signed short code = newKeyCombo.code;
-	    unsigned int flags = [aRecorder cocoaToCarbonFlags:newKeyCombo.flags];
+	    // unsigned int flags = [aRecorder cocoaToCarbonFlags:newKeyCombo.flags]; // Old version throws casting error in new Xcode 
+	    NSInteger flags = [aRecorder cocoaToCarbonFlags:newKeyCombo.flags]; // Replacement function to fix casting error. Seems to work
 	    akeyCombo = [[PTKeyCombo alloc] initWithKeyCode:code modifiers:flags];
 	    
 	    if (aRecorder == shortcutRecorder) {
