@@ -59,7 +59,7 @@
     hotKeyCenter = [PTHotKeyCenter sharedCenter];
     
     signed short code = newKeyCombo.code;
-    unsigned int flags = [aRecorder cocoaToCarbonFlags:newKeyCombo.flags];
+    NSUInteger flags = [aRecorder cocoaToCarbonFlags:newKeyCombo.flags];
     akeyCombo = [[PTKeyCombo alloc] initWithKeyCode:code modifiers:flags];
     
     if (aRecorder == shortcutRecorder) {

@@ -185,7 +185,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = KS;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = C2FB71D2159A067E00AF0CA9 /* Build configuration list for PBXProject "ShortcutRecorderTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -314,6 +314,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShortcutRecorderTest/ShortcutRecorderTest.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -332,6 +333,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShortcutRecorderTest/ShortcutRecorderTest.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -364,6 +366,7 @@
 				C2FB71F8159A067E00AF0CA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
